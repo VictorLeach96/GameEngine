@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Build|Win32">
+      <Configuration>Build</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{19FE5A70-ABE8-4B50-AC60-607DAB5A18F7}</ProjectGuid>
+    <RootNamespace>MutinyLab1</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>GameEngine</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Build|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Build|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Build|Win32'">
+    <OutDir>./build/</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GLEW_STATIC;GLUT_STATIC;AL_LIBRARY_STATIC;%(PreprocessorDefinitions);FREEGLUT_LIB_PRAGMAS=0</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>freeglut.lib;glew.lib;opengl32.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;BulletCollision.lib;BulletDynamics.lib;LinearMath.lib;</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GLEW_STATIC;GLUT_STATIC;AL_LIBRARY_STATIC;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>freeglut.lib;glew.lib;opengl32.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;BulletCollision.lib;BulletDynamics.lib;LinearMath.lib;</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Build|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GLEW_STATIC;FREEGLUT_STATIC;AL_LIBRARY_STATIC;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>freeglut.lib;glew.lib;opengl32.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;BulletCollision.lib;BulletDynamics.lib;LinearMath.lib;</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>freeglut_static.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Application.h" />
+    <ClInclude Include="include\Component.h" />
+    <ClInclude Include="include\Components\Camera.h" />
+    <ClInclude Include="include\Components\Input.h" />
+    <ClInclude Include="include\Components\MeshRenderer.h" />
+    <ClInclude Include="include\Components\Movement.h" />
+    <ClInclude Include="include\Components\Transform.h" />
+    <ClInclude Include="include\GameObject.h" />
+    <ClInclude Include="include\internal\platform.h" />
+    <ClInclude Include="include\Scene.h" />
+    <ClInclude Include="\\bournemouth.ac.uk\data\Student\Home\SciTech\i7671967\GameThingy\include\Components\Colider.h" />
+    <ClInclude Include="\\bournemouth.ac.uk\data\Student\Home\SciTech\i7671967\GameThingy\include\Components\Light.h" />
+    <ClInclude Include="\\bournemouth.ac.uk\data\Student\Home\SciTech\i7671967\GameThingy\include\Components\RigidBody.h" />
+    <ClInclude Include="\\bournemouth.ac.uk\data\Student\Home\SciTech\i7671967\GameThingy\include\Material.h" />
+    <ClInclude Include="\\bournemouth.ac.uk\data\Student\Home\SciTech\i7671967\GameThingy\include\Mesh.h" />
+    <ClInclude Include="\\bournemouth.ac.uk\data\Student\Home\SciTech\i7671967\GameThingy\include\Shaders\AdvancedShader.h" />
+    <ClInclude Include="\\bournemouth.ac.uk\data\Student\Home\SciTech\i7671967\GameThingy\include\Shaders\BasicShader.h" />
+    <ClInclude Include="\\bournemouth.ac.uk\data\Student\Home\SciTech\i7671967\GameThingy\include\Shaders\Shader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\Component.cpp" />
+    <ClCompile Include="src\Components\Camera.cpp" />
+    <ClCompile Include="src\Components\Input.cpp" />
+    <ClCompile Include="src\Components\MeshRenderer.cpp" />
+    <ClCompile Include="src\Components\Transform.cpp" />
+    <ClCompile Include="src\GameObject.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Scene.cpp" />
+    <ClCompile Include="\\bournemouth.ac.uk\data\Student\Home\SciTech\i7671967\GameThingy\src\Components\Colider.cpp" />
+    <ClCompile Include="\\bournemouth.ac.uk\data\Student\Home\SciTech\i7671967\GameThingy\src\Components\Light.cpp" />
+    <ClCompile Include="\\bournemouth.ac.uk\data\Student\Home\SciTech\i7671967\GameThingy\src\Components\Movement.cpp" />
+    <ClCompile Include="\\bournemouth.ac.uk\data\Student\Home\SciTech\i7671967\GameThingy\src\Components\RigidBody.cpp" />
+    <ClCompile Include="\\bournemouth.ac.uk\data\Student\Home\SciTech\i7671967\GameThingy\src\Material.cpp" />
+    <ClCompile Include="\\bournemouth.ac.uk\data\Student\Home\SciTech\i7671967\GameThingy\src\Mesh.cpp" />
+    <ClCompile Include="\\bournemouth.ac.uk\data\Student\Home\SciTech\i7671967\GameThingy\src\Shaders\AdvancedShader.cpp" />
+    <ClCompile Include="\\bournemouth.ac.uk\data\Student\Home\SciTech\i7671967\GameThingy\src\Shaders\BasicShader.cpp" />
+    <ClCompile Include="\\bournemouth.ac.uk\data\Student\Home\SciTech\i7671967\GameThingy\src\Shaders\Shader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\Basic_Fragment.glsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="shaders\Basic_Vertex.glsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="shaders\Advanced_Fragment.glsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="shaders\Advanced_Vertex.glsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

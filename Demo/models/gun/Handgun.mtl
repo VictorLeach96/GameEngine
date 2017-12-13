@@ -1,0 +1,13 @@
+# 
+# 
+newmtl handgun
+Ns 96.078431
+Ka 0.400000 0.400000 0.400000
+Kd 0.800000 0.800000 0.800000
+Ks 0.600000 0.600000 0.600000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd models/gun/Handgun_D.tga
+map_Ks models/gun/Handgun_S.tga
+map_Bump models/gun/Handgun_N.tga

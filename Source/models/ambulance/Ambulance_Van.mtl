@@ -1,0 +1,15 @@
+# 
+# Wavefront material file
+# Converted by the DEEP Exploration  Deep Exploration 4.1.20.1005 Release
+# Right Hemisphere, LTD
+# http://www.righthemisphere.com/
+# 
+
+newmtl blinn1
+Ka 0 0 0
+Kd 1 1 1
+Ks 1 1 1
+illum 2
+Ns 2
+map_Kd models/ambulance/Ambulance.bmp
+map_kS models/ambulance/Ambulance.bmp
